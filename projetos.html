@@ -3,71 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click Social - Página Inicial</title>
+    <title>Click Social - Projetos</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <header>
-        <nav>
+        <div class="logo">Click Social</div>
+            <nav>
             <ul>
-                <h1>Click Social</h1>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projetos.html">Projetos</a></li>
                 <li><a href="cadastro.html">Cadastro</a></li>
             </ul>
-        </nav>
+            </nav>
     </header>
+
     <main>
-        <!-- Banner projetos -->
-        <section>
-            <div>
+        <!-- Banner Projetos -->
+        <section class="banner">
+            <div class="banner-texto">
                 <h1>Nossos Projetos Sociais</h1>
                 <p>Descubra como estamos transformando vidas e como você pode participar.</p>
-                <a href="cadastro.html">Cadastre-se para Participar</a>
+                <a href="cadastro.html" class="botao">Cadastre-se para Participar</a>
             </div>
         </section>
 
         <!-- Voluntariado -->
-        <section>
+        <section class="secao">
             <h2>Oportunidades de Voluntariado</h2>
             <p>Participe em nossas Ações sociais, campanhas e eventos, ajudando quem mais precisa.</p>
         </section>
 
         <!-- Galeria de Projetos -->
-        <section>
+        <section class="secao">
             <h2>Projetos Sociais</h2>
-            <div>
-                <div>
-                    <img src="images/projeto 1.jpg" alt="Projeto 1">
+            <div class="projetos-galeria">
+                <div class="projeto">
+                    <img src="img/Projeto 1.png" alt="Projeto 1">
                     <h3>Projeto Educação para Todos</h3>
-                    <p>O projeto Educação para Todos promove oficinas gratuitas de leitura, escrita e informática básica em comunidades carentes, com o objetivo de reduzir a evasão escolar e abrir novas oportunidades para jovens e adultos.</p>
+                    <p>Oferecendo aulas e materiais para crianças em comunidades carentes.</p>
                 </div>
-                <div>
-                    <img src="images/projeto 2.jpg" alt="Projeto 2">
+                <div class="projeto">
+                    <img src="img/Projeto 2.png" alt="Projeto 2">
                     <h3>Projeto Verde Esperança</h3>
                     <p>O Verde Esperança incentiva o plantio de árvores, que fortalecendo a consciência ambiental.</p>
                 </div>
-                <div>
-                    <img src="images/projeto 3.jpg" alt="Projeto 3">
+                <div class="projeto">
+                    <img src="img/Projeto 3.png" alt="Projeto 3">
                     <h3>Projeto Mãos que Ajudam</h3>
-                    <p>O Mãos que Ajudam organiza campanhas de arrecadação de alimentos, roupas e brinquedos, levando solidariedade e esperança a famílias em situação de vulnerabilidade social.</p>
+                     <p>O Mãos que Ajudam organiza campanhas de arrecadação de alimentos, roupas e brinquedos, levando solidariedade e esperança a famílias em situação de vulnerabilidade social.</p>
                 </div>
             </div>
         </section>
 
         <!-- Doações -->
-        <section>
+        <section class="secao">
             <h2>Como Doar</h2>
             <p>Contribua financeiramente ou com materiais. Cada ajuda faz a diferença.</p>
         </section>
 
         <!-- Indicadores e Galeria -->
-        <section>
+        <section class="secao">
             <h2>Resultados e Galeria</h2>
             <p>Mais de 10.000 pessoas beneficiadas. Veja fotos de nossas atividades.</p>
         </section>
+
     </main>
+
     <footer>
-        <p>&copy; 2025 Click Social. Todos os direitos reservados.</p>
+        <p>&copy; <span id="year"></span> ONG Exemplo. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

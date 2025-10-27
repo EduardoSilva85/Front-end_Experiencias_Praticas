@@ -4,56 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Click Social - Cadastro</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Animação fade-in e fade-out da mensagem */
+        @keyframes fadeInOut {
+        0% { opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { opacity: 0; }
+        }
+
+        #msgSucesso {
+        display: none;
+        color: green;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 15px;
+        }
+
+        #msgSucesso.show {
+        display: block;
+        animation: fadeInOut 3s forwards;
+        }
+    </style>
 </head>
+
 <body>
     <header>
-        <nav>
+        <div class="logo">Click Social</div>
+            <nav>
             <ul>
-                <h1>Click Social</h1>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="cadastro.html" class="ativo">Cadastro</a></li>
             </ul>
-        </nav>
+            </nav>
     </header>
 
     <main>
+
         <!-- Banner Cadastro -->
-        <section>
-            <div>
+        <section class="banner">
+            <div class="banner-texto">
                 <h1>Cadastro</h1>
                 <p>Cadastre-se como voluntário ou doador e participe de nossos projetos!</p>
             </div>
         </section>
-        
+
         <!-- Formulário -->
         <form id="cadastroForm">
-        
+      
             <!-- Seleção Voluntário / Doador -->
-            <div>
-                <input type="radio" id="doador" name="fav_language" value="doador">
-                <label for="doador">Doador</label><br>
-                <input type="radio" id="voluntario" name="fav_language" value="voluntario">
-                <label for="voluntario">Voluntário</label><br>
+            <div class="selecao-usuario">
+                <div id="opVoluntario" class="opcao-usuario">Voluntário</div>
+                <div id="opDoador" class="opcao-usuario">Doador</div>
             </div>
-        
-            <!-- Campos de formulário -->
-            <div>
+
+            <!-- Campos do formulário -->
+            <div class="form-grid">
                 <input type="text" name="nome" placeholder="Nome Completo" required>
-                <input type="text" name="cpf" placeholder="CPF" required>
-                <input type="date" name="dataNascimento" required>
-                <input type="tel" name="telefone" placeholder="Telefone" required>
                 <input type="email" name="email" placeholder="E-mail" required>
-                <input type="text" name="endereco" placeholder="Endereço" required>
+                <input type="text" id="cpf" name="cpf" placeholder="CPF" required>
+                <input type="text" id="telefone" name="telefone" placeholder="Telefone" required>
+                <input type="date" name="nascimento" required>
+                <input type="text" name="cep" id="cep" placeholder="CEP" required>
+                <input type="text" name="endereco" placeholder="Endereço" class="form-grid-single" required>
                 <input type="text" name="cidade" placeholder="Cidade" required>
                 <input type="text" name="estado" placeholder="Estado" required>
-                <input type="text" name="cep" placeholder="CEP" required>
             </div>
+
             <button type="submit">Enviar Cadastro</button>
+
+            <!-- Mensagem de envio -->
+            <p id="msgSucesso">Cadastro enviado com Sucesso!</p>
         </form>
     </main>
     <footer>
-        <p>&copy; 2025 Click Social. Todos os direitos reservados.</p>
+        <p>&copy; <span id="year"></span> clicksocial. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+
+        // Atualiza o ano automaticamente
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Seleção Voluntário / Doador
+        const vol = document.getElementById('opVoluntario');
+        const doad = document.getElementById('opDoador');
+
+        vol.addEventListener('click', () => {
+            vol.classList.add('selecionado');
+            doad.classList.remove('selecionado');
+        });
+
+        doad.addEventListener('click', () => {
+            doad.classList.add('selecionado');
+            vol.classList.remove('selecionado');
+        });
+
+        // Mensagem de envio com animação
+        const form = document.getElementById('cadastroForm');
+        const msg = document.getElementById('msgSucesso');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            msg.classList.add('show');
+        form.reset();
+            vol.classList.remove('selecionado');
+            doad.classList.remove('selecionado');
+
+        // Remove a mensagem após a animação
+        setTimeout(() => {
+            msg.classList.remove('show');
+        }, 3000);
+        });
+    </script>
 </body>
 </html>

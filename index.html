@@ -4,65 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Click Social - Página Inicial</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <header>
-        <nav>
+        <div class="logo">Click Social</div>
+            <nav>
             <ul>
-            <h1>Click Social</h1>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projetos.html">Projetos</a></li>
-            <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
             </ul>
-        </nav>
+            </nav>
     </header>
-    
+
     <main>
+
         <!-- Banner principal -->
-        <section>
-            <div>
+        <section class="banner">
+            <div class="banner-texto">
                 <h1>Impacto que Faz a Diferença</h1>
                 <p>Nossa missão é promover oportunidades, educação e esperança para todos.</p>
-                <a href="cadastro.html">Cadastre-se Agora</a>
+                <a href="cadastro.html" class="botao">Cadastre-se Agora</a>
             </div>
         </section>
-        
+
         <!-- Missão, Visão e Valores -->
-        <section>
+        <section class="secao">
             <h2>Missão</h2>
-            <p>Garantir inclusão digital, oferecendo acesso a cursos, conteúdos de aprendizados offline e ferramentas digitais para comunidades com conectividade limitada, promovendo autonomia, cidadania e novas oportunidades.</p>
+            <p>Garantir inclusão digital, oferecendo acesso a cursos, conteúdos offline e ferramentas digitais para comunidades com conectividade limitada, promovendo autonomia, cidadania e novas oportunidades.</p>
         </section>
-        <section >
+
+        <section class="secao">
             <h2>Visão</h2>
             <p>Ser referência em inclusão digital, capacitando jovens, adultos e idosos para que alcancem maior independência e participação ativa na sociedade conectada.</p>
         </section>
-        <section>
-            <h2>Valores</h2>
-            <p><b>Acessibilidade:</b> Todos devem ter acesso à tecnologia e aprendizado digital.<br> 
-            <b>Impacto Social:</b> Transformar vidas através da educação digital.<br> 
-            <b>Sustentabilidade:</b> Promover soluções práticas e sustentáveis, online e offline.<br>
-            <b>Colaboração:</b> Fortalecer parcerias com ONGs, escolas e comunidades.<br>  
-            <b>Ética e Transparência:</b> Atuar com responsabilidade e clareza em todas as ações.<br></p>
-        </section>
         
+        <section class="secao">
+            <h2>Valores</h2>
+            <p> <b>Acessibilidade:</b> Todos devem ter acesso à tecnologia e aprendizado digital.<br> 
+                <b>Impacto Social:</b> Transformar vidas através da educação digital.<br> 
+                <b>Sustentabilidade:</b> Promover soluções práticas e sustentáveis, online e offline.<br>
+                <b>Colaboração:</b> Fortalecer parcerias com ONGs, escolas e comunidades.<br>  
+                <b>Ética e Transparência:</b> Atuar com responsabilidade e clareza em todas as ações.<br>
+            </p>
+        </section>
+
         <!-- Histórico e Equipe -->
-        <section>
+        <section class="secao">
             <h2>Histórico e Equipe</h2>
-            <p>O Click Social nasceu do esforço de um grupo de estudantes e profissionais comprometidos com a inclusão digital. Mesmo sendo iniciantes, a equipe uniu habilidades em tecnologia, design e educação para desenvolver soluções simples, acessíveis e de grande impacto social. Cada membro contribui para que mais pessoas tenham acesso ao conhecimento e às oportunidades digitais. Além disso, nossa equipe também atua em outras áreas de apoio e projetos, como campanhas de doação e iniciativas voltadas à conscientização sobre a importância de cuidar do meio ambiente.</p>
+            <p>O Click Social nasceu de um grupo de estudantes e profissionais comprometidos com a inclusão digital. Apesar de iniciantes, a equipe uniu habilidades em tecnologia, design e educação para criar soluções simples, acessíveis e de grande impacto social. Cada membro contribui para que mais pessoas tenham acesso ao conhecimento e oportunidades digitais.</p>
         </section>
 
         <!-- Contato -->
         <section class="secao">
-            <h2>Contato (fake/teste)</h2>
-            <address>
+            <adress>
+                <h2>Contato (fake/teste)</h2>
                 <p><b>Email:</b> contato@clicksocial.org | <b>Telefone:</b> (11) 99999-9999</p>
-                <p><b>Endereço:</b> Rua da Inclusão, 123 - Bairro Digital - São Paulo/SP</p>
-            </address>
+                <p><b>Endereço:</b> Rua da Inclusão, 123 – Bairro Digital, Cidade Exemplo – SP</p>
+            </adress>
         </section>
-
     </main>
+
     <footer>
-        <p>&copy; 2025 Click Social. Todos os direitos reservados.</p>
+        <p>&copy; <span id="year"></span> Click Social. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        // Atualiza o ano automaticamente
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
